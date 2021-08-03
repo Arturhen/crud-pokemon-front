@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="lead bg-light">
+    <div class="p-4 mb-2 bg-pokedex display-6 text-white text-center">
+      Pokedex
+    </div>
+    <div class="container-lg">
+      <div class="text-center">Ficha técnica</div>
+      <div class="row justify-content-around align-items-center">
+        <div class="col-sm-5">
+          <form class="form-pokemon">
+            <div>
+              ID do Pokemon:
+              <div class="input-group mb-3">
+                <input
+                  required
+                  type="number"
+                  class="
+                    form-control
+                    back-azul-claro
+                    form-crud-pokemon-nome-pokemon
+                  "
+                  id="pokemon-id-input"
+                  aria-describedby="basic-addon3"
+                />
+              </div>
+            </div>
+            <div>
+              Nome do Treinador:
+              <div class="input-group mb-3">
+                <input
+                  required
+                  type="text"
+                  class="
+                    form-control
+                    back-azul-claro
+                    form-crud-pokemon-nome-treinador
+                  "
+                  id="pokemon-trainer-input"
+                  aria-describedby="basic-addon3"
+                />
+              </div>
+            </div>
+            <div>
+              Local da captura:
+              <div class="input-group mb-3">
+                <input
+                  required
+                  type="text"
+                  class="form-control back-azul-claro form-crud-pokemon-local"
+                  id="basic-url"
+                  aria-describedby="basic-addon3"
+                />
+              </div>
+            </div>
+            <div>
+              Data da captura:
+              <div class="input-group mb-3">
+                <input
+                  required
+                  type="date"
+                  class="form-control back-azul-claro form-crud-pokemon-data"
+                  id="basic-url"
+                  aria-describedby="basic-addon3"
+                />
+              </div>
+            </div>
+            <div class="d-flex justify-content-between">
+              <input type="submit" id="envio" class="btn btn-success" />
+
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#meus-pokemons"
+              >
+                Ver os meus
+              </button>
+              <div
+                class="modal fade"
+                id="meus-pokemons"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header bg-light text-dark">
+                      <h5 class="modal-title">Veja seus Pokemons</h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-2">Olá treinador, Qual seu nome?</div>
+                      <input type="text" id="treinador-nome" />
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancelar
+                      </button>
+                      <button
+                        href="pokedex.html"
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal"
+                        id="ir-pag-pokemons"
+                      >
+                        Ver meus Pokemons
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- FIM MODAL LER -->
+
+              <!-- MODAL Excluir -->
+              <button
+                type="button"
+                class="btn btn-outline-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+              >
+                Excluir
+              </button>
+              <div
+                class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header bg-light text-dark">
+                      <h5 class="modal-title" id="staticBackdropLabel">
+                        Exclua um registro
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="mb-2">
+                        Qual ID do registro que deseja Excluir?
+                      </div>
+                      <input type="number" id="registro-excluir" />
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-danger"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancelar
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-dismiss="modal"
+                        id="btn-excluir-pokemon"
+                      >
+                        Excluir
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- FIM MODAL -->
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-6">
+          <div class="text-center">Fotos do pokemon</div>
+          <div class="row align-items-center">
+            <div class="col">
+              <div class="bg-secondary py-5 d-flex justify-content-center">
+                <img
+                  id="image-pokemon-1"
+                  class="img-fluid"
+                  style="width: 90%; max-width: 15rem"
+                  src="http://www.pokemongobrasil.com/wp-content/uploads/2016/08/pokebola-go.png"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col">
+              <img
+                id="image-pokemon-2"
+                class="img-fluid bg-secondary px-5 py-3 mt-1"
+                style="width: 12rem"
+                src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/fd31be8c8735550.png"
+                alt=""
+              />
+              <img
+                id="image-pokemon-3"
+                class="img-fluid bg-secondary px-5 py-3 mt-2"
+                style="width: 12rem"
+                src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/fd31be8c8735550.png"
+                alt=""
+              />
+            </div>
+            <div class="my-3">Outros Pokemons que voce possui</div>
+            <div class="row">
+              <div class="col">
+                <img
+                  class="img-fluid imagem-outro-pokemon"
+                  style="width: 90%; max-width: 15rem"
+                  src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/fd31be8c8735550.png"
+                  alt=""
+                />
+              </div>
+              <div class="col">
+                <img
+                  class="img-fluid imagem-outro-pokemon"
+                  style="width: 90%; max-width: 15rem"
+                  src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/fd31be8c8735550.png"
+                  alt=""
+                />
+              </div>
+              <div class="col">
+                <img
+                  class="img-fluid imagem-outro-pokemon"
+                  style="width: 90%; max-width: 15rem"
+                  src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/fd31be8c8735550.png"
+                  alt=""
+                />
+              </div>
+              <div class="col">
+                <img
+                  class="img-fluid imagem-outro-pokemon"
+                  style="width: 90%; max-width: 15rem"
+                  src="https://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/fd31be8c8735550.png"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="p-5 mt-3 bg-footer display-6 text-white text-center footer"
+    ></div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
